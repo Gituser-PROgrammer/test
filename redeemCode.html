@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sai Sriyan" />
+    <meta name="description" content="" />
+    <title>Redeem Code</title>
+    <style>
+      .icon {
+        width: 60px;
+      }
+      body {
+        font-size: 62.5%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-size: 1.6rem;
+      }
+      footer {
+        font-size: 1.25rem;
+      }
+      button {
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Redeem Gift Code:</h1>
+    </header>
+    <main>
+      Enter code here:
+      <input type="text" id="enteredCode" />
+      <br />
+      <br />
+      <button id="redeemCodeButton">Redeem Code</button>
+      <br /><br />
+      <p id="validityChecker"></p>
+    </main>
+
+    <audio
+      src="https://res.cloudinary.com/dxcywxeqq/video/upload/v1719396460/1_K1-GODSLAYER_NCS_Release_dvxfx4.mp3"
+      id="musicAudioFile"
+      controls
+      autoplay
+    ></audio>
+    <audio
+      src="https://res.cloudinary.com/dxcywxeqq/video/upload/v1719587280/131662__bertrof__game-sound-correct_v2_ykerjz.wav"
+      id="correctAudioFile"
+      controls
+    ></audio>
+    <br />
+    <hr />
+    <footer>&copy;Copyright, Sai Sriyan Nakka. <br />Version 0.1</footer>
+    <script>
+      const SS_code = "SS215012";
+      const SN_code = "SN327005";
+      const SR_code = "SR132177";
+      const SJ_code = "SJ613079";
+
+      let musicAudioFile = document.getElementById("musicAudioFile");
+      musicAudioFile.currentTime = 7;
+      let correctAudioFile = document.getElementById("correctAudioFile");
+      let validityChecker = document.getElementById("validityChecker");
+
+      function redeemCodeChecker() {
+        let enteredCode = document.getElementById("enteredCode").value;
+
+        switch (true) {
+          case enteredCode === SS_code:
+            validityChecker.textContent = "Code is valid.";
+
+            break;
+        }
+      }
+      function playAudio() {
+        let playMusic = musicAudioFile.autoplay();
+        validityChecker.innerHTML = playMusic;
+        console.log(playMusic);
+      }
+      playAudio();
+      document.getElementById("redeemCodeButton").onclick = () => {
+        redeemCodeChecker();
+      };
+      playAudio();
+    </script>
+  </body>
+</html>
